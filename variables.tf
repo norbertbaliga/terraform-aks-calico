@@ -46,3 +46,9 @@ variable "admin_groups" {
   type        = list(string)
   default     = []
 }
+
+variable "authorized_ips" {
+  description = "A list of IP ranges (CIDR) that are authorized to access the Cluster."
+  type        = list(string)
+  default     = []
+}
