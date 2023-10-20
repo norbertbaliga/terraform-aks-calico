@@ -56,7 +56,7 @@ resource "azurerm_kubernetes_cluster" "aks1" {
 
   # Restrict public access to authorized CIDR ranges only
   api_server_access_profile {
-    authorized_ip_ranges = var.authorized_ips
+    authorized_ip_ranges = var.authorized_ips # CONF-7
   }
 
   identity {
@@ -68,7 +68,7 @@ resource "azurerm_kubernetes_cluster" "aks1" {
   workload_identity_enabled = true  # CONF-4
 
   # Disable local accounts
-  local_account_disabled    = true  
+  local_account_disabled    = true  # CONF-6
 
   tags = var.resource_tags
 }

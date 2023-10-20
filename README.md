@@ -6,5 +6,7 @@ This repo contains terraform templates for creating an Azure Kubernetes Cluster 
 * CONF-3: Enable Kubernetes RBAC and AKS-managed Azure AD integration
 * CONF-4: Enable Azure AD Workload Identity 
 * CONF-5: Enable OIDC Issuer (required for the Workload Identity)
+* CONF-6: Disable local accounts
+* CONF-7: Secure access to the API server using authorized IP ranges
 
 In addition to the AKS cluster IaC, the repo holds the deployment manifest files for different examples/experiments under the `examples` folder. Also, these examples will continuously be converted into terraform templates.
