@@ -54,6 +54,11 @@ resource "azurerm_kubernetes_cluster" "aks1" {
     load_balancer_sku = "standard"
   }
 
+  # Restrict public access to authorized CIDR ranges only
+  api_server_access_profile {
+    authorized_ip_ranges = var.authorized_ips # CONF-7
+  }
+
   identity {
     type = "SystemAssigned"   # CONF-1
   }
@@ -61,6 +66,9 @@ resource "azurerm_kubernetes_cluster" "aks1" {
   # Preview feature: https://learn.microsoft.com/en-us/azure/aks/workload-identity-deploy-cluster#register-the-enableworkloadidentitypreview-feature-flag
   oidc_issuer_enabled       = true  # CONF-5
   workload_identity_enabled = true  # CONF-4
+
+  # Disable local accounts
+  local_account_disabled    = true  # CONF-6
 
   tags = var.resource_tags
 }
