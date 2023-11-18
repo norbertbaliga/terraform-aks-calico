@@ -31,7 +31,7 @@ resource "azurerm_kubernetes_cluster" "aks1" {
   dns_prefix          = "${var.prefix}-cluster"
   kubernetes_version  = var.k8s_version
 
-# CONF-3: AKS-managed Azure Active Directory integration
+  # CONF-3: AKS-managed Azure Active Directory integration
   azure_active_directory_role_based_access_control {
     managed                = true
     admin_group_object_ids = var.admin_groups
@@ -49,8 +49,8 @@ resource "azurerm_kubernetes_cluster" "aks1" {
   }
 
   network_profile {
-    network_plugin    = "azure"     # When network_plugin is set to azure vnet_subnet_id field in the default_node_pool block must be set and pod_cidr must not be set.
-    network_policy    = "calico"    # CONF-2
+    network_plugin    = "azure"  # When network_plugin is set to azure vnet_subnet_id field in the default_node_pool block must be set and pod_cidr must not be set.
+    network_policy    = "calico" # CONF-2
     load_balancer_sku = "standard"
   }
 
@@ -60,12 +60,12 @@ resource "azurerm_kubernetes_cluster" "aks1" {
   }
 
   identity {
-    type = "SystemAssigned"   # CONF-1
+    type = "SystemAssigned" # CONF-1
   }
 
   # Preview feature: https://learn.microsoft.com/en-us/azure/aks/workload-identity-deploy-cluster#register-the-enableworkloadidentitypreview-feature-flag
-  oidc_issuer_enabled       = true  # CONF-5
-  workload_identity_enabled = true  # CONF-4
+  oidc_issuer_enabled       = true # CONF-5
+  workload_identity_enabled = true # CONF-4
 
   # Disable local accounts
   local_account_disabled    = true  # CONF-6
