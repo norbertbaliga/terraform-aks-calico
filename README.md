@@ -10,4 +10,4 @@ This repo contains terraform templates for creating an Azure Kubernetes Cluster 
 * CONF-7: Secure access to the API server using authorized IP ranges
 * CONF-8: Managed nginx Ingress with the application routing add-on
 
-In addition to the AKS cluster IaC, the repo holds the deployment manifest files for different examples/experiments under the `examples` folder. Also, these examples will continuously be converted into terraform templates.
+In addition to the AKS cluster IaC, the repo holds the deployment manifest files for different examples/experiments under the `manifests` folder. Also, these examples will continuously be converted into terraform templates.
