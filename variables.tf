@@ -19,7 +19,7 @@ variable "resource_tags" {
   description = "Tags to set for all resources"
   type        = map(string)
   default = {
-    environment  = "dev"
+    environment = "dev"
   }
 }
 
@@ -51,4 +51,10 @@ variable "authorized_ips" {
   description = "A list of IP ranges (CIDR) that are authorized to access the Cluster."
   type        = list(string)
   default     = []
+}
+
+variable "dns_zone_id" {
+  description = "The ID of the DNS Zone in which DNS entries are created for applications deployed. Leave empty for Bring-Your-Own DNS zones."
+  type = string
+  default = ""
 }
