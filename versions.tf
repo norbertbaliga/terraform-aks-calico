@@ -2,6 +2,12 @@
 # SPDX-License-Identifier: MPL-2.0
 
 terraform {
+  cloud {
+    organization = "norbertbaliga-goto"
+    workspaces {
+      name = "tf-aks-calico"
+    }
+  }
   required_providers {
     azurerm = {
       source  = "hashicorp/azurerm"
