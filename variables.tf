@@ -38,7 +38,7 @@ variable "worker_vm_size" {
 variable "k8s_version" {
   description = "The Kubernetes version specified for the cluster."
   type        = string
-  default     = "1.25"
+  default     = "1.26"
 }
 
 variable "admin_groups" {
