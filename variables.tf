@@ -55,6 +55,6 @@ variable "authorized_ips" {
 
 variable "dns_zone_id" {
   description = "The ID of the DNS Zone in which DNS entries are created for applications deployed. Leave empty for Bring-Your-Own DNS zones."
-  type = string
-  default = ""
+  type        = string
+  default     = ""
 }

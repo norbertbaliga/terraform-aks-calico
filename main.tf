@@ -72,10 +72,10 @@ resource "azurerm_kubernetes_cluster" "aks1" {
   workload_identity_enabled = true # CONF-4
 
   # Disable local accounts
-  local_account_disabled    = true  # CONF-6
+  local_account_disabled = true # CONF-6
 
   web_app_routing {
-    dns_zone_id = var.dns_zone_id   # CONF-8
+    dns_zone_id = var.dns_zone_id # CONF-8
   }
 
   tags = var.resource_tags
